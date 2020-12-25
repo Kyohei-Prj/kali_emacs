@@ -32,6 +32,11 @@
 
 (elpy-enable)
 (setq elpy-rpc-virtualenv-path 'current)
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+(add-to-list 'python-shell-completion-native-disabled-interpreters
+	     "jupyter")
 
 (require 'company)
 (global-company-mode)
