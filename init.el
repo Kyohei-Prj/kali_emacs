@@ -22,6 +22,8 @@
 (global-set-key (kbd "C-j") 'goto-line)
 (global-set-key (kbd "C-h") 'helm-for-files)
 (set-face-attribute 'region nil :background "green")
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
 
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
