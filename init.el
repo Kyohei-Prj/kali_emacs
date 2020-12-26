@@ -22,8 +22,8 @@
 (global-set-key (kbd "C-j") 'goto-line)
 (global-set-key (kbd "C-h") 'helm-for-files)
 (set-face-attribute 'region nil :background "green")
-(cua-mode t)
-(setq cua-enable-cua-keys nil)
+;;(cua-mode t)
+;;(setq cua-enable-cua-keys nil)
 (load-theme 'dracula t)
 
 (require 'multi-term)
