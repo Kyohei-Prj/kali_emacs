@@ -8,7 +8,7 @@
  ;; If there is more than one, they won't work right.
  '(ein:output-area-inlined-images t)
  '(package-selected-packages
-   '(flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
+   '(dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,6 +24,7 @@
 (set-face-attribute 'region nil :background "green")
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
+(load-theme 'dracula t)
 
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
