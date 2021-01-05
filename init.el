@@ -21,9 +21,8 @@
 (windmove-default-keybindings)
 (global-set-key (kbd "C-j") 'goto-line)
 (global-set-key (kbd "C-h") 'helm-for-files)
+(global-set-key (kbd "C-x C-r") 'cua-rectangle-mark-mode)
 (set-face-attribute 'region nil :background "green")
-;;(cua-mode t)
-;;(setq cua-enable-cua-keys nil)
 (load-theme 'dracula t)
 
 (require 'multi-term)
