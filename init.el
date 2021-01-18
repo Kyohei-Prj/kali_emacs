@@ -8,7 +8,7 @@
  ;; If there is more than one, they won't work right.
  '(ein:output-area-inlined-images t)
  '(package-selected-packages
-   '(dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
+   '(counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -32,7 +32,7 @@
 (elscreen-start)
 (require 'mozc)
 (setq default-input-method "japanese-mozc")
-
+(counsel-mode t)
 (elpy-enable)
 (setq elpy-rpc-virtualenv-path 'current)
 (setq python-shell-interpreter "jupyter"
