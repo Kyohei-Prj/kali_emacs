@@ -17,6 +17,7 @@
  )
 
 (setq inhibit-startup-message t)
+(setq visible-bell t)
 (global-linum-mode t)
 (windmove-default-keybindings)
 (global-set-key (kbd "C-j") 'goto-line)
