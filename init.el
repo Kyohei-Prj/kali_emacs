@@ -1,14 +1,32 @@
+(tool-bar-mode -1)
+(tooltip-mode -1)
+(menu-bar-mode -1)
+(set-fringe-mode 10)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+
+(package-initialize)
+(unless package-archive-contents
+ (package-refresh-contents))
+
+;; Initialize use-package on non-Linux platforms
+(unless (package-installed-p 'use-package)
+   (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ein:output-area-inlined-images t)
+ '(ivy-rich-mode t)
  '(package-selected-packages
-   '(counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
+   '(which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -27,12 +45,23 @@
 (load-theme 'dracula t)
 
 (require 'multi-term)
-(setq multi-term-program "/bin/bash")
+(setq multi-term-program "/bin/zsh")
+
 (require 'elscreen)
 (elscreen-start)
+
 (require 'mozc)
 (setq default-input-method "japanese-mozc")
+
 (counsel-mode t)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x b") 'counsel-ibuffer)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(ivy-rich-mode t)
+
+(which-key-mode t)
+(setq which-key-idle-delay 1)
+
 (elpy-enable)
 (setq elpy-rpc-virtualenv-path 'current)
 (setq python-shell-interpreter "jupyter"
