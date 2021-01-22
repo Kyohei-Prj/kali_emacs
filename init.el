@@ -25,7 +25,7 @@
  '(ein:output-area-inlined-images t)
  '(ivy-rich-mode t)
  '(package-selected-packages
-   '(which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
+   '(swiper-helm hydra which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -40,6 +40,7 @@
 (global-set-key (kbd "C-j") 'goto-line)
 (global-set-key (kbd "C-h") 'helm-for-files)
 (global-set-key (kbd "C-x C-r") 'cua-rectangle-mark-mode)
+(global-set-key (kbd "C-s") 'swiper)
 (set-face-attribute 'region nil :background "green")
 (load-theme 'dracula t)
 
@@ -51,6 +52,14 @@
 
 (require 'mozc)
 (setq default-input-method "japanese-mozc")
+
+(use-package hydra)
+(defhydra hydra-text-scale (:timeout 4)
+  "scale text"
+  ("j" text-scale-increase "in")
+  ("k" text-scale-decrease "out")
+  ("f" nil "finished" :exit t))
+
 
 (counsel-mode t)
 (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -71,6 +80,10 @@
 
 (require 'company)
 (global-company-mode)
+(define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-p") 'company-select-previous)
+(define-key company-search-map (kbd "C-n") 'company-select-next)
+(define-key company-search-map (kbd "C-p") 'company-select-previous)
 
 (require 'rtags)
 (require 'company-rtags)
