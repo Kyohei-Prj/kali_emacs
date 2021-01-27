@@ -27,7 +27,7 @@
  '(ein:output-area-inlined-images t)
  '(ivy-rich-mode t)
  '(package-selected-packages
-   '(fontawesome swiper-helm hydra which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
+   '(magit counsel-projectile fontawesome swiper-helm hydra which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
