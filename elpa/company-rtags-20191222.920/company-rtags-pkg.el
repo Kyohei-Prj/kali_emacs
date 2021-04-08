@@ -1,0 +1,2 @@
+;;; Generated package description from company-rtags-20191222.920/company-rtags.el  -*- no-byte-compile: t -*-
+(define-package "company-rtags" "20191222.920" "RTags back-end for company" '((emacs "24.3") (company "0.8.1") (rtags "2.10")) :commit "39339388256df662d0084b4a094d03e52748f9e8" :authors '(("Jan Erik Hanssen" . "jhanssen@gmail.com") ("Anders Bakken" . "agbakken@gmail.com")) :maintainer '("Jan Erik Hanssen" . "jhanssen@gmail.com") :url "https://github.com/Andersbakken/rtags")
