@@ -3,6 +3,8 @@
 (menu-bar-mode -1)
 (set-fringe-mode 10)
 
+(set-face-attribute 'default nil :height 80)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
