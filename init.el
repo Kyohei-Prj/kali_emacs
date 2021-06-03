@@ -3,7 +3,7 @@
 (menu-bar-mode -1)
 (set-fringe-mode 10)
 
-(set-face-attribute 'default nil :height 80)
+(set-face-attribute 'default nil :height 100)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -29,7 +29,7 @@
  '(ein:output-area-inlined-images t)
  '(ivy-rich-mode t)
  '(package-selected-packages
-   '(magit counsel-projectile fontawesome swiper-helm hydra which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
+   '(lsp-mode lsp-ui rustic cargo rust-mode magit counsel-projectile fontawesome swiper-helm hydra which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -54,8 +54,8 @@
 (require 'elscreen)
 (elscreen-start)
 
-(require 'mozc)
-(setq default-input-method "japanese-mozc")
+;;(require 'mozc)
+;;(setq default-input-method "japanese-mozc")
 
 (use-package hydra)
 (defhydra hydra-text-scale (:timeout 4)
@@ -150,3 +150,11 @@
 
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+(use-package rustic)
+(use-package yasnippet
+  :ensure
+  :config
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook 'yas-minor-mode)
+  (add-hook 'text-mode-hook 'yas-minor-mode))

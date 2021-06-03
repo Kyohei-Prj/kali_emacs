@@ -3,6 +3,8 @@
 (menu-bar-mode -1)
 (set-fringe-mode 10)
 
+(set-face-attribute 'default nil :height 100)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
@@ -22,10 +24,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("2dff5f0b44a9e6c8644b2159414af72261e38686072e063aa66ee98a2faecf0e" default))
  '(ein:output-area-inlined-images t)
  '(ivy-rich-mode t)
  '(package-selected-packages
-   '(swiper-helm hydra which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
+   '(rustic cargo rust-mode magit counsel-projectile fontawesome swiper-helm hydra which-key use-package ivy-rich counsel dracula-theme flycheck-irony flycheck-rtags flycheck-yamllint flymake-yaml company-rtags helm-rtags rtags company-irony company-irony-c-headers ein virtualenv ac-mozc mozc multi-term elpy elscreen helm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -40,6 +44,7 @@
 (global-set-key (kbd "C-j") 'goto-line)
 (global-set-key (kbd "C-h") 'helm-for-files)
 (global-set-key (kbd "C-x C-r") 'cua-rectangle-mark-mode)
+(global-set-key (kbd "C-s") 'swiper)
 (set-face-attribute 'region nil :background "green")
 (load-theme 'dracula t)
 
@@ -49,8 +54,8 @@
 (require 'elscreen)
 (elscreen-start)
 
-(require 'mozc)
-(setq default-input-method "japanese-mozc")
+;;(require 'mozc)
+;;(setq default-input-method "japanese-mozc")
 
 (use-package hydra)
 (defhydra hydra-text-scale (:timeout 4)
@@ -145,3 +150,4 @@
 
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
